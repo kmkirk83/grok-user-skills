@@ -1,0 +1,55 @@
+name: Validate Skills
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**/SKILL.md"
+      - ".github/workflows/validate-skills.yml"
+      - ".github/scripts/validate_skills.py"
+  pull_request:
+    branches: [main]
+    paths:
+      - "**/SKILL.md"
+      - ".github/workflows/validate-skills.yml"
+      - ".github/scripts/validate_skills.py"
+  workflow_dispatch:  # allow manual runs
+
+concurrency:
+  group: validate-skills-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  # checks and pull-requests not strictly required for this script-based approach
+
+jobs:
+  validate:
+    name: Validate all SKILL.md files
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install PyYAML
+        run: pip install --quiet pyyaml
+
+      - name: Validate skills
+        id: validate
+        run: python .github/scripts/validate_skills.py
+
+      - name: Summary
+        if: always()
+        run: |
+          if [ "${{ job.status }}" = "success" ]; then
+            echo "### ✅ All skills validated successfully" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "### ❌ Skill validation failed — see logs and annotations" >> $GITHUB_STEP_SUMMARY
+          fi
