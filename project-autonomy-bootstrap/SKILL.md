@@ -1,6 +1,6 @@
 ---
 name: project-autonomy-bootstrap
-description: Activate at the start of every new chat or when continuing work on a project to maximize autonomy thoroughness and effectiveness. Orchestrates task decomposition verification skill-gap analysis agent evaluation autonomous research multi-agent orchestration and background completion into a single high-effort startup and ongoing workflow. Use when beginning a chat, starting or resuming a project, maximizing effort from the first message, or any request to apply the full autonomy suite.
+description: Activate at the start of every new chat or when continuing work on a project to maximize autonomy thoroughness and effectiveness. Orchestrates task decomposition verification skill-gap analysis agent evaluation autonomous research multi-agent orchestration background completion and product delivery swarm into a single high-effort startup and ongoing workflow. Use when beginning a chat, starting or resuming a project, maximizing effort from the first message, or any request to apply the full autonomy suite.
 ---
 
 # Project Autonomy Bootstrap
@@ -18,6 +18,7 @@ This skill orchestrates:
 - autonomous-research-synthesizer
 - realtime-agent-orchestra
 - background-completion-swarm
+- product-delivery-swarm
 
 Load the individual skill files only when their detailed procedures are required. Prefer the coordinated workflow below for routine use.
 
