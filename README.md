@@ -17,6 +17,7 @@ A collection of specialized skills designed to maximize **autonomy**, **thorough
 | **background-completion-swarm** | Fully autonomous finishing of unfinished work across codebases |
 | **vibe-coding-maximizer** | Elite practices for production-quality vibe coding and promoting AI products |
 | **product-delivery-swarm** | Fully autonomous multi-agent swarm that drives projects to complete products with frontend, tests, and GitHub Releases |
+| **autonomous-ship-deploy** | Ship completed code projects to Vercel or Netlify for free public user interaction |
 
 ## Installation
 

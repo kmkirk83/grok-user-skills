@@ -46,6 +46,7 @@ Orchestrate a persistent, high-autonomy swarm that takes a repository or project
    - When success criteria are met, prepare a release: semantic version bump, changelog, GitHub Release with notes and assets.
    - Optionally create a pull request for review or push a tagged release directly if the user has authorized full autonomy.
    - Surface the release URL and a concise summary of what shipped.
+   - When a live public URL is in scope, run autonomous-ship-deploy (Vercel primary, Netlify fallback) so end users can interact without self-hosting.
 
 8. Progress reporting and continuation
    - After each cycle (or on a schedule), produce a short status report: completed items, remaining gaps, blockers, and next actions.
